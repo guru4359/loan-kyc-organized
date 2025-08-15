@@ -1,0 +1,13 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #e3f2fd;
+  margin: 0;
+  padding: 0;
+}
+h1, h2 {
+  color: #1565c0;
+}
+form input, form button {
+  margin: 0.5em 0;
+  padding: 0.5em;
+}

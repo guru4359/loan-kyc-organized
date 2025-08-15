@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: bank-loan-kyc-backend
+    env: node
+    plan: starter
+    buildCommand: "npm install"
+    startCommand: "npm start"
+    repo: https://github.com/guru4359/bank-loan-kyc-mvp
+    branch: main
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: TWILIO_API_KEY
+        sync: false
+    autoDeploy: true
+
+  - type: web
+    name: bank-loan-kyc-frontend
+    env: static
+    buildCommand: "npm install && npm run build"
+    staticPublishPath: "frontend/build"
+    repo: https://github.com/guru4359/bank-loan-kyc-mvp
+    branch: main
+    autoDeploy: true
+
+databases:
+  - name: bank-loan-kyc-db
+    plan: starter
